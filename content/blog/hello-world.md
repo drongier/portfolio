@@ -7,7 +7,7 @@ excerpt: Bienvenue sur mon blog ! Premier article : comment fonctionne ce site e
 
 # Hello World ! 👋
 
-Bienvenue sur mon blog. C'est le premier article d'un site que je construis **en public** — littéralement : le code source est sur [GitHub](https://github.com/drongier/portofolio).
+Bienvenue sur mon blog. C'est le premier article d'un site que je construis **en public** — littéralement : le code source est sur [GitHub](https://github.com/drongier/portfolio).
 
 ## Comment ce site fonctionne
 

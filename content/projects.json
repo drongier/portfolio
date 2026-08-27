@@ -1,7 +1,7 @@
 [
   {
-    "name": "portofolio",
-    "url": "https://github.com/drongier/portofolio",
+    "name": "portfolio",
+    "url": "https://github.com/drongier/portfolio",
     "status": "en cours",
     "description": "Ce site : mon blog et portfolio de développeur. Site 100 % statique généré par un script Python sans dépendance, hébergé sur GitHub Pages."
   }

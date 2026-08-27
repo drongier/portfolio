@@ -1,4 +1,4 @@
-# portofolio
+# portfolio
 
 Mon blog / portfolio de développeur — site 100 % statique, généré par un script Python **sans aucune dépendance** (stdlib uniquement), hébergé gratuitement sur GitHub Pages.
 
@@ -46,4 +46,4 @@ Le script génère automatiquement : la page d'accueil (bio + projets + 3 dernie
 2. Sur GitHub : **Settings → Pages → Source : GitHub Actions**.
 3. Le workflow `.github/workflows/pages.yml` build et déploie automatiquement à chaque push sur `main`.
 
-Le site sera publié sur `https://drongier.github.io/portofolio/`.
+Le site sera publié sur `https://drongier.github.io/portfolio/`.

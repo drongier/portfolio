@@ -1,6 +1,6 @@
 # portfolio
 
-Mon blog / portfolio de développeur — site 100 % statique, généré par un script Python **sans aucune dépendance** (stdlib uniquement), hébergé gratuitement sur GitHub Pages.
+Mon blog / portfolio de développeur, site 100 % statique, généré par un script Python **sans aucune dépendance** (stdlib uniquement), hébergé gratuitement sur GitHub Pages.
 
 ## Structure
 

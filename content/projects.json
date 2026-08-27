@@ -4,5 +4,11 @@
     "url": "https://github.com/drongier/portfolio",
     "status": "en cours",
     "description": "Ce site : mon blog et portfolio de développeur. Site 100 % statique généré par un script Python sans dépendance, hébergé sur GitHub Pages."
+  },
+  {
+    "name": "Blockchain Breathing",
+    "url": "https://drongier.github.io/blockchain-breathing/",
+    "status": "en ligne",
+    "description": "Art génératif en temps réel piloté par la blockchain Ethereum. Chaque epoch (6 min 24) donne naissance à une forme unique, seedée par le réseau, qui se dessine au rythme des blocs."
   }
 ]

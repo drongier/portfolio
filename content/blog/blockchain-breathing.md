@@ -79,12 +79,47 @@ Chaque moteur a sa forme, ses déformations, son énergie et son style de trait.
 
 Dernier détail qui change tout : l'art est **déterministe**. Les mêmes données produisent exactement la même image. Du coup, pas besoin de stocker des captures : je sauvegarde juste les données brutes de chaque epoch (32 lignes de timestamp, prix, transactions) dans le localStorage, et la galerie **rejoue** les toiles à l'identique. Clic sur une vignette pour l'ouvrir en plein écran.
 
+## Après le lancement : la chasse aux bugs
+
+Un site "qui marche", c'est souvent un site dont on n'a pas encore trouvé les bugs. Les miens ne se sont pas fait attendre.
+
+### Le canvas qui débordait de l'écran
+
+Premier test sur téléphone : la forme n'était plus centrée, je ne voyais qu'un bout du cercle coincé en bas à droite. Le rendu semblait "zoomé".
+
+Le coupable, c'était le canvas sur écran retina. J'avais bien réglé la résolution interne (`canvas.width = W * devicePixelRatio`), mais pas sa taille CSS. Un canvas est un élément dit "remplacé" : sans `width` en CSS, il garde sa taille intrinsèque en pixels physiques et déborde du viewport. Deux lignes ont tout réglé : `canvas.style.width` et `canvas.style.height`.
+
+### La galerie qui rejouait toujours la même chose
+
+Dans le live, chaque epoch avait son archétype. Dans la galerie, toutes les toiles se ressemblaient. En creusant : je seedais le moteur avec l'identifiant de l'epoch, mais je n'archivais jamais cet identifiant. La galerie rejouait donc tout avec le seed zéro.
+
+C'est la leçon la plus importante du projet : dans un système déterministe, le seed fait partie des données. L'oublier, c'est briser la fidélité du replay.
+
+### Le trait qui se dessine en direct
+
+Jusque-là, chaque trait apparaissait d'un coup. Pour la V2, je voulais le voir se tracer, comme un stylo qui suit le contour.
+
+Le principe est simple : chaque trait connaît son instant de naissance, et le rendu ne dessine que la fraction du chemin correspondant au temps écoulé. Calé sur 11 secondes, le trait se termine juste avant que le prochain bloc arrive. Le réseau dessine littéralement sous tes yeux.
+
+### Une galerie toute verte
+
+Après le tracé, un nouveau décalage : le live était coloré, la galerie toute verte. Le vert, c'est le milieu de ma palette. La galerie ajoutait une marge de 100 dollars autour du prix pour calculer les couleurs, ce qui écrasait la variation réelle (quelques dollars sur 6 minutes) et envoyait tout au milieu.
+
+Le correctif : supprimer la marge et adopter le même mapping progressif que le live. Les deux sont désormais cohérents.
+
+### Des tags pour figer les versions
+
+Dernier point, plus méthodologique : j'ai posé des tags Git (`v1.0.0`, `v1.1.0`) pour garder un instantané de chaque étape. C'est la bonne pratique pour revenir en arrière sans encombrer l'historique.
+
 ## Ce que j'ai appris
 
-Ce projet m'a appris trois choses :
+Ce projet m'a appris beaucoup de choses, dans l'ordre où les bugs me les ont enseignées :
 
 1. **Le déterminisme est un superpouvoir** : quand un rendu ne dépend que de ses données, tu peux le rejouer, le partager, l'archiver sans le stocker.
 2. **Regarde toujours la taille de la réponse** : un paramètre mal choisi dans une API peut te coûter des mégaoctets.
 3. **Itérer sur le concept, pas sur les paramètres** : le vrai saut qualitatif n'est pas venu d'un réglage, mais d'un changement de modèle (une forme par epoch au lieu de trente).
+4. **Le seed est une donnée** : un système déterministe ne vaut que si tu archives tout ce qui détermine le rendu, y compris le point de départ.
+5. **Un écran, ce n'est pas qu'une résolution** : le devicePixelRatio et la taille CSS du canvas comptent, le moindre oubli décale tout sur les écrans retina.
+6. **Le live et le replay doivent partager le même code** : dès que deux chemins calculent la même chose différemment, un écart apparaît.
 
-Le résultat, c'est [Blockchain Breathing](https://drongier.github.io/blockchain-breathing/) : une œuvre qui se construit sous tes yeux, dont chaque toile est une photographie organique de l'état du réseau à cet instant. Ouvre la page, laisse-la vivre 6 minutes, et regarde ce que la blockchain a dessiné.
+Le résultat, c'est [Blockchain Breathing](https://drongier.github.io/blockchain-breathing/) : une œuvre qui se construit sous tes yeux, trait après trait, dont chaque toile est une photographie organique de l'état du réseau à cet instant. Ouvre la page, laisse-la vivre 6 minutes, et regarde ce que la blockchain a dessiné.

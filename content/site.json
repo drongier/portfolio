@@ -2,7 +2,7 @@
   "name": "Damien Rongier",
   "tagline": "Développeur, j'apprends en écrivant",
   "lang": "fr",
-  "about": "Salut ! Moi c'est **Damien**, développeur. Ce site est mon coin pour **présenter mes projets** et **écrire des articles** sur ce que j'apprends en code.\n\nCe site est construit en HTML/CSS pur, généré par un petit script Python, zéro dépendance, simple et rapide.",
+  "about": "Bienvenue. Je suis Damien Rongier, programmeur audio, développeur et régisseur technique, basé à Berlin. Mon travail se situe à la croisée du code, de l'innovation et de la création artistique.\n\nIngénieur du son de formation (BTS, spécialisation production musicale), puis diplômé en ingénierie logicielle de l'École 42 Berlin, j'explore les ponts entre le code et les émotions.\n\n**Audio & Code.** Je conçois des systèmes audio interactifs pour le jeu vidéo, en particulier la scène indépendante. C, C++, Rust, Wwise, FMOD ou Web Audio API : je construis des moteurs robustes et des outils créatifs.\n\n**Musique & Live.** Le son est mon premier langage. Ingénieur du son pour le live et les festivals indépendants (consoles, réseaux Dante), mais avant tout musicien : pianiste et compositeur, du jazz contemporain à la techno et la bass music.\n\n**Tech émergentes & Art génératif.** Je m'intéresse à l'intelligence artificielle, aux architectures décentralisées et au creative coding. TouchDesigner, Babylon.js ou Bevy pour expérimenter de nouvelles formes d'expression.\n\n**Cinéma & Culture.** Cinéphile assidu (plusieurs projections par semaine), lecteur de philosophie. Pour garder l'équilibre : yoga, natation et musculation au quotidien.",
   "links": {
     "GitHub": "https://github.com/drongier",
     "Email": "mailto:damthedev@gmail.com"

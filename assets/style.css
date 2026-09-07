@@ -76,6 +76,27 @@ section h2 {
 }
 .project p { color: var(--muted); margin: 0.35rem 0 0; }
 
+/* categories */
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.category-btn {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.9rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+.category-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* posts */
 .post-item { margin-bottom: 2rem; }
 .post-item h2, .post-item h3 { margin-bottom: 0.15rem; }

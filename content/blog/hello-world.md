@@ -1,7 +1,7 @@
 ---
 title: Hello World
 date: 2026-08-27
-tags: meta, blog
+tags: dev, meta, blog
 excerpt: Bienvenue sur mon blog ! Premier article : comment fonctionne ce site et comment écrire de nouveaux articles.
 ---
 

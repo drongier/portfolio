@@ -1,7 +1,7 @@
 ---
 title: Blockchain Breathing, une œuvre générée par le pouls d'Ethereum
 date: 2026-08-27
-tags: javascript, ethereum, art-generatif, canvas
+tags: dev, art, javascript, ethereum, art-generatif, canvas
 excerpt: Comment j'ai construit une œuvre d'art qui respire au rythme de la blockchain Ethereum, étape par étape, des données brutes jusqu'au moteur de génération.
 ---
 

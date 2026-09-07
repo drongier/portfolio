@@ -1,0 +1,8 @@
+[
+  { "slug": "dev", "label": "Dev/Code" },
+  { "slug": "cinema", "label": "Cinéma" },
+  { "slug": "philosophie", "label": "Philosophie" },
+  { "slug": "musique", "label": "Musique" },
+  { "slug": "art", "label": "Art" },
+  { "slug": "voyage", "label": "Voyage" }
+]

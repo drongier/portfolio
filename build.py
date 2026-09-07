@@ -141,6 +141,10 @@ def load_projects() -> list:
     return json.loads((CONTENT / "projects.json").read_text(encoding="utf-8"))
 
 
+def load_categories() -> list:
+    return json.loads((CONTENT / "categories.json").read_text(encoding="utf-8"))
+
+
 def load_posts() -> list[dict]:
     posts = []
     for path in sorted((CONTENT / "blog").glob("*.md")):
@@ -178,6 +182,7 @@ def build() -> None:
     lang = site.get("lang", "en")
     projects = load_projects()
     posts = load_posts()
+    categories = load_categories()
     year = str(datetime.now().year)
 
     # clean output, copy assets
@@ -219,11 +224,16 @@ def build() -> None:
         f'<p>{inline(p["excerpt"])}</p></article>'
         for p in posts[:3]
     )
+    category_buttons = "".join(
+        f'<a class="category-btn" href="./blog/category/{c["slug"]}/">{c["label"]}</a>'
+        for c in categories
+    )
     home_content = render_template(
         "home.html",
         name=site["name"],
         tagline=site.get("tagline", ""),
         about_html=md_to_html(site.get("about", "")),
+        categories_html=category_buttons,
         projects_html=project_cards,
         latest_posts_html=latest_html,
         blog_link="./blog/",
@@ -258,6 +268,28 @@ def build() -> None:
         post_dir.mkdir()
         (post_dir / "index.html").write_text(
             shell(p["title"], post_content, "../.."), encoding="utf-8"
+        )
+
+    # ---- category pages
+    for c in categories:
+        cat_posts = [p for p in posts if c["slug"] in p["tags"]]
+        if cat_posts:
+            cat_posts_html = "".join(
+                '<article class="post-item">'
+                f'<h2><a href="../../{p["slug"]}/">{inline(p["title"])}</a></h2>'
+                f'<time>{format_date(p["date"], lang)}</time>'
+                f'<p>{inline(p["excerpt"])}</p></article>'
+                for p in cat_posts
+            )
+        else:
+            cat_posts_html = '<p class="muted">Aucun article pour l\'instant.</p>'
+        cat_content = render_template(
+            "category.html", category_label=c["label"], posts_html=cat_posts_html
+        )
+        cat_dir = blog_dir / "category" / c["slug"]
+        cat_dir.mkdir(parents=True)
+        (cat_dir / "index.html").write_text(
+            shell(c["label"], cat_content, "../.."), encoding="utf-8"
         )
 
     print(f"Site built in {OUT} ({len(posts)} post(s), {len(projects)} project(s)).")

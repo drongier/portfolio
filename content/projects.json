@@ -10,5 +10,11 @@
     "url": "https://drongier.github.io/blockchain-breathing/",
     "status": "en ligne",
     "description": "Art génératif en temps réel piloté par la blockchain Ethereum. Chaque epoch (6 min 24) donne naissance à une forme unique, seedée par le réseau, qui se dessine au rythme des blocs."
+  },
+  {
+    "name": "WorldWideMovie",
+    "url": "https://drongier.github.io/WorldWideMovie/",
+    "status": "en ligne",
+    "description": "Application React pour suivre mon défi d'un film par pays : 197 pays groupés par continent, recherche de films sur TMDB, notes personnelles et liste synchronisée dans le cloud."
   }
 ]

@@ -1,8 +1,8 @@
 {
   "name": "Damien Rongier",
-  "tagline": "Programmeur audio et développeur, j'apprends en écrivant",
+  "tagline": "Programmeur audio et développeur, basé à Berlin.",
   "lang": "fr",
-  "about": "Programmeur audio, développeur et régisseur technique, je suis basé à Berlin. Mon travail se situe à la croisée du code, de l'innovation et de la création artistique.\n\nIngénieur du son de formation (BTS, spécialisation production musicale), puis diplômé en ingénierie logicielle de l'École 42 Berlin, j'explore les ponts entre le code et les émotions.\n\nJe conçois des systèmes audio interactifs pour le jeu vidéo, en particulier la scène indépendante (C, C++, Rust, Wwise, FMOD, Web Audio API). Le son est mon premier langage : ingénieur du son pour le live et les festivals, mais avant tout pianiste et compositeur, du jazz contemporain à la techno. Je m'intéresse aussi à l'IA, à la blockchain et au creative coding (TouchDesigner, Babylon.js, Bevy). Hors écran, je suis cinéphile, lecteur de philosophie, et je garde l'équilibre entre yoga, natation et musculation.",
+  "about": "Mon travail se situe à la croisée du code, de l'innovation et de la création artistique, entre programmation audio, développement et régie technique.\n\nIngénieur du son de formation (BTS, spécialisation production musicale), puis diplômé en ingénierie logicielle de l'École 42 Berlin, j'explore les ponts entre le code et les émotions.\n\nJe conçois des systèmes audio interactifs pour le jeu vidéo, en particulier la scène indépendante (C, C++, Rust, Wwise, FMOD, Web Audio API). Le son est mon premier langage : ingénieur du son pour le live et les festivals, mais avant tout pianiste et compositeur, du jazz contemporain à la techno. Je m'intéresse aussi à l'IA, à la blockchain et au creative coding (TouchDesigner, Babylon.js, Bevy). Hors écran, je suis cinéphile, lecteur de philosophie, et je garde l'équilibre entre yoga, natation et musculation.",
   "links": {
     "GitHub": "https://github.com/drongier",
     "Email": "mailto:damthedev@gmail.com"

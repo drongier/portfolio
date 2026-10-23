@@ -16,5 +16,11 @@
     "url": "https://drongier.github.io/WorldWideMovie/",
     "status": "en ligne",
     "description": "Application React pour suivre mon défi d'un film par pays : 197 pays groupés par continent, recherche de films sur TMDB, notes personnelles et liste synchronisée dans le cloud."
+  },
+  {
+    "name": "PianoTools",
+    "url": "https://drongier.github.io/PianoTools/",
+    "status": "en ligne",
+    "description": "Tableau de bord dans le navigateur pour travailler ses accords au piano : un clavier MIDI branché, l'appli reconnaît l'accord joué, le montre sur un piano à l'écran et fait avancer dans une grille d'accords."
   }
 ]

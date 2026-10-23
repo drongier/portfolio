@@ -165,7 +165,22 @@ a.tag:hover { color: var(--accent); }
   border-left: 3px solid var(--border);
   color: var(--muted);
 }
-.post-body img { max-width: 100%; height: auto; }
+.post-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+/* an italic line right after an image is its caption */
+.post-body img + em {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  text-align: center;
+}
 .post-body hr { border: 0; border-top: 1px solid var(--border); margin: 2rem 0; }
 .post-body table { border-collapse: collapse; display: block; max-width: 100%; overflow-x: auto; }
 .post-body th, .post-body td {
